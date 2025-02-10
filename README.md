@@ -65,3 +65,5 @@ I considered creating an array of Job titles and variants and matching against t
 I also considered making an api call to an LLM like chat gpt to get a Natural language filter for these keywords giving my job title matches more chance.
 
 Im sure there would also be a library that could have handled the search/match better but I decided against 3rd party tools.
+Considered using a .env but kept it simple.
+

@@ -33,33 +33,33 @@ flask --app fetch run --debug
 
 ## Challenges:
 
-# Cors errors required setting up a backend api
+### Cors errors required setting up a backend api
 
 I was surprised about this requirement given the suggested languages were Javascript (which suggested a purely frontend task) The Flask api was very quick to setup though.
 
-# Fuzzy Matching of text string to job title
+### Fuzzy Matching of text string to job title
 
 This was on the surface an easy challenge. However I soon realized matching the job titles to strings in the bio would not be simple.
 The user bios contained various keywords that did not directly match the job title, so I opted for a loose matching approach
 A brute force method may have made matching easier but Eg. searching for strings and variants more exhaustively.
 I chose a refined pared back approach to meet time requirements
 
-# Fuzzy matching of location
+### Fuzzy matching of location
 
 Again this seemed easy but I would have had to filter locations based on the previous words to determine whether the user was moving TO or FROM that destination. For this reason I removed location from the search.
 I considered adding a 'partial match' class for UI if location keyword showed in bio but that would exclude people with No location in bio
 
-# Perfomance considerations of fuzzy matches
+### Perfomance considerations of fuzzy matches
 
 Searching strings and substrings could be quite costly performance wise so I used useMemo hook to stop unnessesary computations.
 I chose not to use reactQuery just because of time and size of app constraints
 
-# Frontend
+### Frontend
 
 I created a super simple frontend component to display the data.
 Future optimisations would be pagination, caching and UI changes based on result state
 
-# Considerations
+## Considerations
 
 I considered creating an array of Job titles and variants and matching against that - but given the time constraints decided not to.
 I also considered making an api call to an LLM like chat gpt to get a Natural language filter for these keywords giving my job title matches more chance.
